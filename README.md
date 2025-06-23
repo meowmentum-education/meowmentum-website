@@ -1,4 +1,4 @@
-# 🐾 Meowmentum – Website (Web Frontend)
+# 🐾 Meowmentum – Website
 
 This is the **official website and web app** for **Meowmentum**, a smart, AI-powered English language learning platform. The frontend is built with **Next.js** and **TypeScript**, optimized for performance, responsiveness, and learner engagement.
 
