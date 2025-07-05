@@ -1,6 +1,7 @@
 # 🐾 Meowmentum – Website
 
-This is the **official website and web app** for **Meowmentum**, a smart, AI-powered English language learning platform. The frontend is built with **Next.js** and **TypeScript**, optimized for performance, responsiveness, and learner engagement.
+This is the **official website and web app** for **Meowmentum**, a smart, AI-powered English–Vietnamese language learning platform.  
+The frontend is built with **React**, **TypeScript**, and **Tailwind CSS**, optimized for responsiveness, accessibility, and learner engagement.
 
 > 💡 Learn more about the full platform: [Meowmentum Overview](https://github.com/meowmentum-education)
 
@@ -8,28 +9,29 @@ This is the **official website and web app** for **Meowmentum**, a smart, AI-pow
 
 ## 🧠 Features
 
-- 🌐 **Next.js** SPA with pre-rendering and dynamic routing
-- 🎨 **Tailwind CSS** for clean, responsive design
-- 🧩 Modular components for vocabulary, quizzes, and progress tracking
-- 🔐 Integrated with JWT-authenticated APIs (via backend)
-- ⚙️ Configurable via environment variables
-- 📱 Mobile-friendly (PWA-ready)
+- ⚛️ **React.js SPA** with modular routing
+- 🎨 **Tailwind CSS** for clean, responsive UI
+- 🧩 Reusable components for vocabulary, quizzes, progress tracking
+- 🔐 Integrated with secure JWT-authenticated APIs (backend)
+- 📱 Fully mobile-responsive (React Native version available)
+- 🔧 Configurable via environment variables
+- 🚀 Planned support for PWA and offline caching
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer       | Technology                          |
-|-------------|--------------------------------------|
-| Framework   | React (Next.js 14)                   |
-| Language    | TypeScript                           |
-| Styling     | Tailwind CSS                         |
+| Layer       | Technology                            |
+|-------------|----------------------------------------|
+| Framework   | React                               |
+| Language    | TypeScript                             |
+| Styling     | Tailwind CSS                           |
 | State       | React Context API / Zustand (optional) |
-| Forms       | React Hook Form + Zod                |
-| Auth        | JWT (via backend API)                |
-| API Client  | Axios / Fetch API                    |
-| Testing     | Jest + React Testing Library (optional) |
-| Deployment  | Vercel / Netlify / Custom CI (planned) |
+| Forms       | React Hook Form + Zod                  |
+| Auth        | JWT (via backend API)                  |
+| API Client  | Axios / Fetch API                      |
+| Testing     | Jest + React Testing Library (planned) |
+| Deployment  | Vercel / Netlify / CI pipeline (planned) |
 
 ---
 
@@ -38,17 +40,14 @@ This is the **official website and web app** for **Meowmentum**, a smart, AI-pow
 ```
 /meowmentum-website
 ├── components/       # Reusable UI components
-├── pages/            # Next.js routes
-│   ├── index.tsx     # Homepage
-│   ├── login.tsx     # Auth routes
-│   └── dashboard/    # Protected student features
+├── pages/            # SPA views (e.g., Home, Login, Dashboard)
 ├── public/           # Static assets
-├── styles/           # Tailwind config & globals
-├── utils/            # Helpers and API client
+├── styles/           # Tailwind config & global styles
+├── utils/            # API clients and helpers
 ├── hooks/            # Custom React hooks
 ├── types/            # Shared TypeScript types
-├── .env.local        # API base URL, secrets
-└── next.config.js    # Next.js configuration
+├── .env.local        # API URL and app config
+└── vite.config.ts    # Vite (if used) or CRA config
 ```
 
 ---
@@ -58,7 +57,7 @@ This is the **official website and web app** for **Meowmentum**, a smart, AI-pow
 ### 📦 Prerequisites
 
 - Node.js (v18+)
-- Yarn or npm
+- npm or Yarn
 - A running instance of the [Meowmentum Backend API](https://github.com/trandaine/meowmentum-backend)
 
 ### 🔧 Installation
@@ -81,8 +80,8 @@ This is the **official website and web app** for **Meowmentum**, a smart, AI-pow
    Create a `.env.local` file:
 
    ```env
-   NEXT_PUBLIC_API_URL=https://localhost:5001/api
-   NEXT_PUBLIC_APP_NAME=Meowmentum
+   VITE_API_URL=https://localhost:5001/api
+   VITE_APP_NAME=Meowmentum
    ```
 
 4. **Run locally**
@@ -91,48 +90,53 @@ This is the **official website and web app** for **Meowmentum**, a smart, AI-pow
    npm run dev
    ```
 
-   Open `http://localhost:3000` to view the site.
+   Then open `http://localhost:3000` to view the app.
 
 ---
 
 ## 🔐 Authentication
 
-- Uses **JWT tokens** stored in localStorage (or HttpOnly cookies optionally)
-- User sessions handled through backend-authenticated endpoints
+- Uses **JWT tokens** stored in `localStorage` (or cookies, if configured)
+- Backend verifies credentials and returns token on login
+- Protected routes and UI handled via React guards or custom hooks
 
 ---
 
-## 🧪 Testing (optional setup)
+## 🧪 Testing (optional)
 
-If tests are configured:
+If tests are implemented:
 
 ```bash
 npm run test
 ```
 
+Uses **Jest** + **React Testing Library**
+
 ---
 
 ## 🧱 Development Notes
 
-- Tailwind config in `tailwind.config.ts`
-- Protected routes use simple route guards or middleware (WIP)
-- Mobile-first UI tested via dev tools and PWA audit
+- Tailwind configuration in `tailwind.config.ts`
+- Uses React Router for page navigation
+- State management is flexible (Context API or Zustand)
+- Fully responsive: tested across mobile & desktop breakpoints
 
 ---
 
 ## 📦 Deployment
 
-- Supports auto-deploy with **Vercel** or **Netlify**
-- Dockerfile and CI/CD pipeline planned
+- Deployable to **Vercel**, **Netlify**, or custom Docker-based CI
+- Environment variables defined in `.env` or deployment config
+- PWA setup under consideration for offline support
 
 ---
 
 ## 🤝 Contributing
 
 1. Fork this repo
-2. Create a branch (`feature/your-feature`)
+2. Create a feature branch (`feature/your-feature`)
 3. Commit your changes
-4. Open a pull request 🙌
+4. Open a Pull Request 🙌
 
 ---
 
